@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production Builds
+dist/
+build/
+
+# Python & Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+develop-eggs/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Local SQLite Database & Runtime State
+db.sqlite3
+db.sqlite3-journal
+fcm_tokens_store.json
+
+# User Uploaded Media & Internal Runtime JSON
+backend/media/*
+!backend/media/.gitkeep
+
+# Environment Variables & Private Credentials (NEVER COMMIT)
+.env
+.env.*
+!.env.example
+local_settings.py
+**/firebase-service-account.json
+!*example.json
+*.pem
+*.key
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+.pytest_cache/
+htmlcov/
+
+# Logs & OS Artifacts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini

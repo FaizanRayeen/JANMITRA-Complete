@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: janmitra-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /firebase-messaging-sw.js
+        name: Service-Worker-Allowed
+        value: /
+      - path: /firebase-messaging-sw.js
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains; preload
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://janmitra-backend.onrender.com
+      - key: REACT_APP_API_BASE_URL
+        value: https://janmitra-backend.onrender.com
